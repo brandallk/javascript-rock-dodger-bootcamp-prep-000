@@ -136,10 +136,11 @@ function moveDodger(e) {
   e.preventDefault();
   e.stopPropagation();
   
-  if (e.which === LEFT_ARROW) {
+  if (e.which !== LEFT_ARROW && e.which !== RIGHT_ARROW) {
+    return;
+  } else if (e.which === LEFT_ARROW) {
     moveDodgerLeft();
-  }
-  if (e.which === RIGHT_ARROW) {
+  } else if (e.which === RIGHT_ARROW) {
     moveDodgerRight();
   }
 }
