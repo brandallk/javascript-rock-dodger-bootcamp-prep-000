@@ -170,8 +170,8 @@ function moveDodgerRight() {
    */
   const leftEdge = positionToInteger(DODGER.style.left);
   const rightMovePixels = 4;
-  var furthestRightAllowedPixels = 360;
-    // GAME_WIDTH - positionToInteger(DODGER.style.width);
+  var furthestRightAllowedPixels
+    GAME_WIDTH - positionToInteger(DODGER.style.width);
   
   if (leftEdge < furthestRightAllowedPixels ) {
     window.requestAnimationFrame( () => {
