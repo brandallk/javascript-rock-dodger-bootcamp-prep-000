@@ -133,6 +133,9 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+  e.preventDefault();
+  e.stopPropoagation();
+  
   if (e.which === LEFT_ARROW) {
     moveDodgerLeft();
   } else if (e.which === RIGHT_ARROW) {
