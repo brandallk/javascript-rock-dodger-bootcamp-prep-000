@@ -153,8 +153,9 @@ function moveDodgerLeft() {
    */
   const leftEdge = positionToInteger(DODGER.style.left);
   const leftMovePixels = 4;
+  const furthestLeftAllowedPixels = 0;
   
-  if (leftEdge > 0) {
+  if (leftEdge > furthestLeftAllowedPixels) {
     window.requestAnimationFrame( () => {
       DODGER.style.left = `${leftEdge - leftMovePixels}px`;
     });
