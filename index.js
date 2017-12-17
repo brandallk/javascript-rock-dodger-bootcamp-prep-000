@@ -152,12 +152,12 @@ function moveDodgerLeft() {
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
   const leftEdge = positionToInteger(DODGER.style.left);
-  const leftMovePixels = 4;
-  const furthestLeftAllowedPixels = 0;
+  const movePixels = 4;
+  const minLeftPixels = 0;
   
-  if (leftEdge > furthestLeftAllowedPixels) {
+  if (leftEdge > minLeftPixels) {
     window.requestAnimationFrame( () => {
-      DODGER.style.left = `${leftEdge - leftMovePixels}px`;
+      DODGER.style.left = `${leftEdge - movePixels}px`;
     });
   }
 }
@@ -169,13 +169,13 @@ function moveDodgerRight() {
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
   const leftEdge = positionToInteger(DODGER.style.left);
-  const rightMovePixels = 4;
-  var furthestRightAllowedPixels
-    = GAME_WIDTH - positionToInteger(DODGER.style.width);
+  const movePixels = 4;
+  const dodgerWidth = 40;
+  var maxLeftPixels = GAME_WIDTH - dodgerWidth;
   
-  if (leftEdge < furthestRightAllowedPixels ) {
+  if (leftEdge < maxLeftPixels ) {
     window.requestAnimationFrame( () => {
-      DODGER.style.left = `${leftEdge + rightMovePixels}px`;
+      DODGER.style.left = `${leftEdge + movePixels}px`;
     });
   }
 }
